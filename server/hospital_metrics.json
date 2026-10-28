@@ -1,0 +1,688 @@
+{
+  "mimic_iv": {
+    "title": "MIMIC-IV ICU Decompensation & Sepsis Triage",
+    "authority": "PhysioNet / MIT / Beth Israel Deaconess Medical Center",
+    "application": "Predicts acute ICU decompensation, occult septic shock, and cardiorespiratory failure 6-12 hours in advance.",
+    "sampleCount": 3500,
+    "features": [
+      "Continuous Heart Rate",
+      "Blood Pressure (SBP/DBP/MAP)",
+      "SpO2 Saturation",
+      "Respiratory Rate",
+      "Body Temp",
+      "Shock Index",
+      "SOFA Score"
+    ],
+    "featureColumns": [
+      "heart_rate",
+      "sbp",
+      "dbp",
+      "mean_arterial_pressure",
+      "spo2",
+      "resp_rate",
+      "temperature_c",
+      "shock_index",
+      "sofa_score"
+    ],
+    "models": {
+      "xgboost": {
+        "name": "XGBoost Classifier (Extreme Gradient Boosting)",
+        "trainAccuracy": 95.22,
+        "accuracy": 95.17,
+        "accuracyStd": 0.57,
+        "generalizationGap": 0.05,
+        "overfittingStatus": "OPTIMAL FIT (No Overfitting - Gap < 2.5%)",
+        "f1Score": 0.952,
+        "precision": 95.33,
+        "recall": 95.05,
+        "specificity": 95.3,
+        "confusionMatrix": [
+          [
+            1662,
+            82
+          ],
+          [
+            87,
+            1669
+          ]
+        ],
+        "rocPoints": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.013,
+            0.224
+          ],
+          [
+            0.026,
+            0.437
+          ],
+          [
+            0.038,
+            0.765
+          ],
+          [
+            0.186,
+            0.956
+          ],
+          [
+            0.514,
+            0.969
+          ],
+          [
+            0.792,
+            0.985
+          ],
+          [
+            0.978,
+            0.999
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "foldAccuracies": [
+          94.71,
+          96.0,
+          94.57,
+          94.86,
+          95.71
+        ]
+      },
+      "random_forest": {
+        "name": "Random Forest Ensemble (Bagging Regularization)",
+        "trainAccuracy": 95.2,
+        "accuracy": 95.2,
+        "accuracyStd": 0.6,
+        "generalizationGap": 0.0,
+        "overfittingStatus": "OPTIMAL FIT (No Overfitting - Gap < 2.5%)",
+        "f1Score": 0.952,
+        "precision": 95.38,
+        "recall": 95.05,
+        "specificity": 95.36,
+        "confusionMatrix": [
+          [
+            1663,
+            81
+          ],
+          [
+            87,
+            1669
+          ]
+        ],
+        "rocPoints": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.014,
+            0.282
+          ],
+          [
+            0.027,
+            0.632
+          ],
+          [
+            0.04,
+            0.863
+          ],
+          [
+            0.239,
+            0.958
+          ],
+          [
+            0.557,
+            0.972
+          ],
+          [
+            0.872,
+            0.986
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "foldAccuracies": [
+          94.71,
+          96.0,
+          94.57,
+          94.86,
+          95.86
+        ]
+      },
+      "logistic_regression": {
+        "name": "L2-Regularized Logistic Regression",
+        "trainAccuracy": 95.2,
+        "accuracy": 95.2,
+        "accuracyStd": 0.6,
+        "generalizationGap": 0.0,
+        "overfittingStatus": "OPTIMAL FIT (No Overfitting - Gap < 2.5%)",
+        "f1Score": 0.952,
+        "precision": 95.38,
+        "recall": 95.05,
+        "specificity": 95.36,
+        "confusionMatrix": [
+          [
+            1663,
+            81
+          ],
+          [
+            87,
+            1669
+          ]
+        ],
+        "rocPoints": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.013,
+            0.19
+          ],
+          [
+            0.026,
+            0.521
+          ],
+          [
+            0.04,
+            0.797
+          ],
+          [
+            0.282,
+            0.957
+          ],
+          [
+            0.557,
+            0.973
+          ],
+          [
+            0.817,
+            0.986
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "foldAccuracies": [
+          94.71,
+          96.0,
+          94.57,
+          94.86,
+          95.86
+        ]
+      }
+    },
+    "productionModel": "random_forest"
+  },
+  "cdc_nhanes": {
+    "title": "CDC NHANES Cardiometabolic & Renal Syndrome Risk",
+    "authority": "Centers for Disease Control & Prevention (CDC NHANES)",
+    "application": "Stratifies multi-morbid diabetic nephropathy, metabolic syndrome, and advanced organ compromise from routine blood chemistry.",
+    "sampleCount": 3500,
+    "features": [
+      "Fasting Blood Glucose",
+      "HbA1c Glycemic Index",
+      "Serum Creatinine",
+      "eGFR Glomerular Filtration",
+      "Lipid Panel (Total/LDL/HDL/Trig)",
+      "ALT/AST Liver Enzymes",
+      "Platelet Count",
+      "WBC Count",
+      "BMI",
+      "Age"
+    ],
+    "featureColumns": [
+      "age",
+      "bmi",
+      "fasting_glucose",
+      "hba1c",
+      "serum_creatinine",
+      "egfr",
+      "total_cholesterol",
+      "ldl_cholesterol",
+      "hdl_cholesterol",
+      "triglycerides",
+      "alt_liver",
+      "ast_liver",
+      "platelet_count",
+      "wbc_count"
+    ],
+    "models": {
+      "xgboost": {
+        "name": "XGBoost Classifier (Extreme Gradient Boosting)",
+        "trainAccuracy": 95.91,
+        "accuracy": 95.91,
+        "accuracyStd": 0.65,
+        "generalizationGap": 0.0,
+        "overfittingStatus": "OPTIMAL FIT (No Overfitting - Gap < 2.5%)",
+        "f1Score": 0.959,
+        "precision": 95.77,
+        "recall": 96.05,
+        "specificity": 95.78,
+        "confusionMatrix": [
+          [
+            1681,
+            74
+          ],
+          [
+            69,
+            1676
+          ]
+        ],
+        "rocPoints": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.011,
+            0.202
+          ],
+          [
+            0.022,
+            0.393
+          ],
+          [
+            0.034,
+            0.642
+          ],
+          [
+            0.181,
+            0.963
+          ],
+          [
+            0.519,
+            0.974
+          ],
+          [
+            0.712,
+            0.987
+          ],
+          [
+            0.96,
+            0.998
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "foldAccuracies": [
+          96.14,
+          96.86,
+          94.86,
+          96.0,
+          95.71
+        ]
+      },
+      "random_forest": {
+        "name": "Random Forest Ensemble (Bagging Regularization)",
+        "trainAccuracy": 95.91,
+        "accuracy": 95.91,
+        "accuracyStd": 0.65,
+        "generalizationGap": 0.0,
+        "overfittingStatus": "OPTIMAL FIT (No Overfitting - Gap < 2.5%)",
+        "f1Score": 0.959,
+        "precision": 95.77,
+        "recall": 96.05,
+        "specificity": 95.78,
+        "confusionMatrix": [
+          [
+            1681,
+            74
+          ],
+          [
+            69,
+            1676
+          ]
+        ],
+        "rocPoints": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.012,
+            0.225
+          ],
+          [
+            0.023,
+            0.501
+          ],
+          [
+            0.034,
+            0.712
+          ],
+          [
+            0.157,
+            0.963
+          ],
+          [
+            0.501,
+            0.975
+          ],
+          [
+            0.765,
+            0.987
+          ],
+          [
+            0.999,
+            0.999
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "foldAccuracies": [
+          96.14,
+          96.86,
+          94.86,
+          96.0,
+          95.71
+        ]
+      },
+      "logistic_regression": {
+        "name": "L2-Regularized Logistic Regression",
+        "trainAccuracy": 95.91,
+        "accuracy": 95.91,
+        "accuracyStd": 0.65,
+        "generalizationGap": 0.0,
+        "overfittingStatus": "OPTIMAL FIT (No Overfitting - Gap < 2.5%)",
+        "f1Score": 0.959,
+        "precision": 95.77,
+        "recall": 96.05,
+        "specificity": 95.78,
+        "confusionMatrix": [
+          [
+            1681,
+            74
+          ],
+          [
+            69,
+            1676
+          ]
+        ],
+        "rocPoints": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.012,
+            0.276
+          ],
+          [
+            0.023,
+            0.55
+          ],
+          [
+            0.034,
+            0.79
+          ],
+          [
+            0.097,
+            0.963
+          ],
+          [
+            0.381,
+            0.974
+          ],
+          [
+            0.738,
+            0.987
+          ],
+          [
+            0.96,
+            0.999
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "foldAccuracies": [
+          96.14,
+          96.86,
+          94.86,
+          96.0,
+          95.71
+        ]
+      }
+    },
+    "productionModel": "xgboost"
+  },
+  "fda_faers": {
+    "title": "FDA FAERS Adverse Drug Reaction & Polypharmacy Safety",
+    "authority": "U.S. Food and Drug Administration (FDA Adverse Event Reporting System)",
+    "application": "Identifies severe adverse drug reactions (ADRs), black-box toxicities, and emergent hospitalizations before medication dispensing.",
+    "sampleCount": 3500,
+    "features": [
+      "Concomitant Drug Count",
+      "High-Risk Interaction Pair Flag",
+      "Renal Impairment Flag",
+      "Hepatic Impairment Flag",
+      "Polypharmacy Index",
+      "Anticoagulant Flag",
+      "NSAID Flag",
+      "CYP3A4 Inhibitor Flag",
+      "Antiarrhythmic Flag",
+      "Patient Age"
+    ],
+    "featureColumns": [
+      "patient_age",
+      "concomitant_drug_count",
+      "high_risk_drug_pair",
+      "renal_impairment",
+      "hepatic_impairment",
+      "polypharmacy_index",
+      "takes_anticoagulant",
+      "takes_nsaid",
+      "takes_cyp3a_inhibitor",
+      "takes_antiarrhythmic"
+    ],
+    "models": {
+      "xgboost": {
+        "name": "XGBoost Classifier (Extreme Gradient Boosting)",
+        "trainAccuracy": 94.89,
+        "accuracy": 94.37,
+        "accuracyStd": 0.54,
+        "generalizationGap": 0.52,
+        "overfittingStatus": "OPTIMAL FIT (No Overfitting - Gap < 2.5%)",
+        "f1Score": 0.943,
+        "precision": 94.32,
+        "recall": 94.35,
+        "specificity": 94.39,
+        "confusionMatrix": [
+          [
+            1665,
+            99
+          ],
+          [
+            98,
+            1638
+          ]
+        ],
+        "rocPoints": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.021,
+            0.511
+          ],
+          [
+            0.053,
+            0.941
+          ],
+          [
+            0.224,
+            0.967
+          ],
+          [
+            0.435,
+            0.976
+          ],
+          [
+            0.612,
+            0.985
+          ],
+          [
+            0.801,
+            0.997
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "foldAccuracies": [
+          93.43,
+          94.86,
+          94.86,
+          94.14,
+          94.57
+        ]
+      },
+      "random_forest": {
+        "name": "Random Forest Ensemble (Bagging Regularization)",
+        "trainAccuracy": 94.28,
+        "accuracy": 93.74,
+        "accuracyStd": 0.47,
+        "generalizationGap": 0.54,
+        "overfittingStatus": "OPTIMAL FIT (No Overfitting - Gap < 2.5%)",
+        "f1Score": 0.937,
+        "precision": 93.57,
+        "recall": 93.84,
+        "specificity": 93.65,
+        "confusionMatrix": [
+          [
+            1652,
+            112
+          ],
+          [
+            107,
+            1629
+          ]
+        ],
+        "rocPoints": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.02,
+            0.458
+          ],
+          [
+            0.048,
+            0.909
+          ],
+          [
+            0.186,
+            0.965
+          ],
+          [
+            0.442,
+            0.975
+          ],
+          [
+            0.639,
+            0.979
+          ],
+          [
+            0.807,
+            0.989
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "foldAccuracies": [
+          93.14,
+          93.57,
+          94.43,
+          93.43,
+          94.14
+        ]
+      },
+      "logistic_regression": {
+        "name": "L2-Regularized Logistic Regression",
+        "trainAccuracy": 94.45,
+        "accuracy": 94.37,
+        "accuracyStd": 0.15,
+        "generalizationGap": 0.08,
+        "overfittingStatus": "OPTIMAL FIT (No Overfitting - Gap < 2.5%)",
+        "f1Score": 0.943,
+        "precision": 94.57,
+        "recall": 94.07,
+        "specificity": 94.67,
+        "confusionMatrix": [
+          [
+            1670,
+            94
+          ],
+          [
+            103,
+            1633
+          ]
+        ],
+        "rocPoints": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.015,
+            0.382
+          ],
+          [
+            0.032,
+            0.738
+          ],
+          [
+            0.05,
+            0.938
+          ],
+          [
+            0.16,
+            0.965
+          ],
+          [
+            0.539,
+            0.979
+          ],
+          [
+            0.802,
+            0.99
+          ],
+          [
+            0.994,
+            0.999
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "foldAccuracies": [
+          94.14,
+          94.43,
+          94.57,
+          94.43,
+          94.29
+        ]
+      }
+    },
+    "productionModel": "xgboost"
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "MIMIC-IV ICU Telemetry (PhysioNet)": {
+    "XGBoost Classifier": {
+      "trainAccuracy": 95.21,
+      "testAccuracy": 95.17,
+      "stdTest": 0.99,
+      "generalizationGap": 0.04,
+      "foldTestAccuracies": [
+        94.0,
+        95.43,
+        95.71,
+        96.29,
+        96.0,
+        93.14,
+        95.43,
+        94.29,
+        96.29,
+        95.14
+      ]
+    },
+    "Random Forest Ensemble": {
+      "trainAccuracy": 95.2,
+      "testAccuracy": 95.2,
+      "stdTest": 1.03,
+      "generalizationGap": 0.0,
+      "foldTestAccuracies": [
+        94.0,
+        95.43,
+        95.71,
+        96.29,
+        96.0,
+        93.14,
+        95.43,
+        94.29,
+        96.57,
+        95.14
+      ]
+    },
+    "L2 Logistic Regression": {
+      "trainAccuracy": 95.2,
+      "testAccuracy": 95.2,
+      "stdTest": 1.03,
+      "generalizationGap": 0.0,
+      "foldTestAccuracies": [
+        94.0,
+        95.43,
+        95.71,
+        96.29,
+        96.0,
+        93.14,
+        95.43,
+        94.29,
+        96.57,
+        95.14
+      ]
+    }
+  },
+  "CDC NHANES Lab Biomarkers (CDC)": {
+    "XGBoost Classifier": {
+      "trainAccuracy": 95.91,
+      "testAccuracy": 95.91,
+      "stdTest": 0.83,
+      "generalizationGap": 0.0,
+      "foldTestAccuracies": [
+        95.71,
+        96.57,
+        96.29,
+        97.43,
+        94.86,
+        95.14,
+        94.86,
+        96.86,
+        96.0,
+        95.43
+      ]
+    },
+    "Random Forest Ensemble": {
+      "trainAccuracy": 95.91,
+      "testAccuracy": 95.91,
+      "stdTest": 0.83,
+      "generalizationGap": 0.0,
+      "foldTestAccuracies": [
+        95.71,
+        96.57,
+        96.29,
+        97.43,
+        94.86,
+        95.14,
+        94.86,
+        96.86,
+        96.0,
+        95.43
+      ]
+    },
+    "L2 Logistic Regression": {
+      "trainAccuracy": 95.91,
+      "testAccuracy": 95.91,
+      "stdTest": 0.83,
+      "generalizationGap": 0.0,
+      "foldTestAccuracies": [
+        95.71,
+        96.57,
+        96.29,
+        97.43,
+        94.86,
+        95.14,
+        94.86,
+        96.86,
+        96.0,
+        95.43
+      ]
+    }
+  },
+  "FDA FAERS Pharmacovigilance (FDA)": {
+    "XGBoost Classifier": {
+      "trainAccuracy": 94.86,
+      "testAccuracy": 94.4,
+      "stdTest": 0.85,
+      "generalizationGap": 0.46,
+      "foldTestAccuracies": [
+        94.29,
+        92.29,
+        95.14,
+        94.29,
+        94.29,
+        95.71,
+        94.57,
+        94.0,
+        94.86,
+        94.57
+      ]
+    },
+    "Random Forest Ensemble": {
+      "trainAccuracy": 94.23,
+      "testAccuracy": 93.89,
+      "stdTest": 0.89,
+      "generalizationGap": 0.34,
+      "foldTestAccuracies": [
+        93.71,
+        92.0,
+        93.71,
+        93.43,
+        93.71,
+        95.43,
+        94.0,
+        93.71,
+        95.14,
+        94.0
+      ]
+    },
+    "L2 Logistic Regression": {
+      "trainAccuracy": 94.44,
+      "testAccuracy": 94.34,
+      "stdTest": 0.71,
+      "generalizationGap": 0.1,
+      "foldTestAccuracies": [
+        94.86,
+        93.71,
+        94.57,
+        94.29,
+        92.86,
+        95.71,
+        94.57,
+        94.29,
+        94.57,
+        94.0
+      ]
+    }
+  },
+  "UCI 41-Disease Clinical Differential": {
+    "XGBoost Classifier": {
+      "trainAccuracy": 100.0,
+      "testAccuracy": 99.84,
+      "stdTest": 0.15,
+      "generalizationGap": 0.16,
+      "foldTestAccuracies": [
+        100.0,
+        99.8,
+        100.0,
+        99.8,
+        100.0,
+        99.59,
+        99.59,
+        99.8,
+        100.0,
+        99.8
+      ]
+    },
+    "Random Forest Ensemble": {
+      "trainAccuracy": 99.94,
+      "testAccuracy": 99.92,
+      "stdTest": 0.13,
+      "generalizationGap": 0.02,
+      "foldTestAccuracies": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        99.8,
+        99.59,
+        99.8,
+        100.0,
+        100.0,
+        100.0
+      ]
+    },
+    "L2 Logistic Regression": {
+      "trainAccuracy": 100.0,
+      "testAccuracy": 99.86,
+      "stdTest": 0.2,
+      "generalizationGap": 0.14,
+      "foldTestAccuracies": [
+        100.0,
+        99.39,
+        100.0,
+        99.8,
+        100.0,
+        99.59,
+        99.8,
+        100.0,
+        100.0,
+        100.0
+      ]
+    }
+  }
+}

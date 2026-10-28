@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "mediai-clinical-mcp": {
+      "command": "python",
+      "args": ["server/mcp_server.py"],
+      "description": "MediAI Care+ Clinical Decision Support MCP Server"
+    },
+    "mediai-http-gateway": {
+      "url": "http://localhost:8000/api/mcp",
+      "description": "FastAPI HTTP Streamable JSON-RPC 2.0 Gateway"
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "dataset": "4,920 records, 132 features, 41 diseases",
+  "crossValidationResults": {
+    "5fold_Logistic Regression_multiclass": {
+      "perFoldTestAcc": [
+        99.7,
+        100.0,
+        99.7,
+        99.8,
+        100.0
+      ],
+      "meanTestAcc": 99.84,
+      "stdTestAcc": 0.14,
+      "meanTrainAcc": 99.87,
+      "gap": 0.03
+    },
+    "5fold_Random Forest (150 trees)_multiclass": {
+      "perFoldTestAcc": [
+        100.0,
+        99.9,
+        99.7,
+        99.9,
+        99.9
+      ],
+      "meanTestAcc": 99.88,
+      "stdTestAcc": 0.1,
+      "meanTrainAcc": 99.89,
+      "gap": 0.01
+    },
+    "5fold_HistGradientBoosting_multiclass": {
+      "perFoldTestAcc": [
+        99.9,
+        99.9,
+        99.8,
+        99.7,
+        99.59
+      ],
+      "meanTestAcc": 99.78,
+      "stdTestAcc": 0.12,
+      "meanTrainAcc": 100.0,
+      "gap": 0.22
+    },
+    "10fold_Logistic Regression_multiclass": {
+      "perFoldTestAcc": [
+        100.0,
+        99.39,
+        100.0,
+        100.0,
+        100.0,
+        99.39,
+        99.8,
+        99.8,
+        100.0,
+        100.0
+      ],
+      "meanTestAcc": 99.84,
+      "stdTestAcc": 0.24,
+      "meanTrainAcc": 99.88,
+      "gap": 0.04
+    },
+    "10fold_Random Forest (150 trees)_multiclass": {
+      "perFoldTestAcc": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        99.8,
+        99.59,
+        99.8,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "meanTestAcc": 99.92,
+      "stdTestAcc": 0.13,
+      "meanTrainAcc": 99.94,
+      "gap": 0.02
+    },
+    "10fold_HistGradientBoosting_multiclass": {
+      "perFoldTestAcc": [
+        99.8,
+        100.0,
+        100.0,
+        99.8,
+        100.0,
+        99.59,
+        99.8,
+        99.59,
+        100.0,
+        99.59
+      ],
+      "meanTestAcc": 99.82,
+      "stdTestAcc": 0.17,
+      "meanTrainAcc": 100.0,
+      "gap": 0.18
+    }
+  },
+  "loocvAccuracy": 99.51,
+  "stressTest": {
+    "cleanTestAcc": 99.9,
+    "symptomDropout": {
+      "drop_20pct": 98.4,
+      "drop_40pct": 92.1,
+      "drop_60pct": 74.8,
+      "drop_80pct": 42.6
+    }
+  }
+}

@@ -1,0 +1,204 @@
+@layer utilities {
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f2f4f6;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #c6c6cd;
+    border-radius: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #76777d;
+  }
+
+  .pulse-ring {
+    animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 101, 145, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 101, 145, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 101, 145, 0); }
+  }
+}
+
+/* Modal backdrop animations */
+.modal-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Professional Print Stylesheet for Clinical PDF Reports */
+@media print {
+  header, nav, aside, #btn-export-outbreak, #btn-export-benchmarks, #btn-quick-search, #user-session-badge {
+    display: none !important;
+  }
+  main, #main-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Staggered chat bubble left teal accent */
+.ai-chat-bubble {
+  border-left: 4px solid #39b8fd;
+}
+
+/* ==========================================================
+   DYNAMIC MOVING HEARTBEAT & ECG PULSE ANIMATIONS
+   Seamless physiological rhythm with zero discontinuity
+   ========================================================== */
+@keyframes physiologicalHeartbeat {
+  0% {
+    transform: scale(1);
+  }
+  24% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(1.16);
+  }
+  41% {
+    transform: scale(1.04);
+  }
+  48% {
+    transform: scale(1.12);
+  }
+  62% {
+    transform: scale(0.985);
+  }
+  80% {
+    transform: scale(1.005);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ecgTraceMotion {
+  0% {
+    stroke-dashoffset: 48;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes ecgPulseGlow {
+  0% {
+    filter: drop-shadow(0 0 1.5px rgba(239, 68, 68, 0.4));
+  }
+  26% {
+    filter: drop-shadow(0 0 2.5px rgba(239, 68, 68, 0.5));
+  }
+  36% {
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.95)) drop-shadow(0 0 4px rgba(255, 255, 255, 0.85));
+  }
+  48% {
+    filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.75)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.65));
+  }
+  64% {
+    filter: drop-shadow(0 0 1.5px rgba(239, 68, 68, 0.4));
+  }
+  100% {
+    filter: drop-shadow(0 0 1.5px rgba(239, 68, 68, 0.4));
+  }
+}
+
+@keyframes badgePulseHalo {
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  28% {
+    opacity: 0;
+  }
+  36% {
+    transform: scale(1.06);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.2;
+  }
+  68% {
+    transform: scale(1.28);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.28);
+    opacity: 0;
+  }
+}
+
+.heartbeat-pulse {
+  animation: physiologicalHeartbeat 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite,
+             ecgPulseGlow 2.4s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform, filter;
+}
+
+.ecg-base-line {
+  stroke-dasharray: none;
+}
+
+.ecg-rhythm-line {
+  /* Exactly 16px pulse length + 32px gap = 48px total (exact mathematical path length)
+     Guarantees 100% seamless looping with zero jump, pop, or offset stutter */
+  stroke-dasharray: 16 32;
+  animation: ecgTraceMotion 2.4s linear infinite;
+  will-change: stroke-dashoffset;
+}
+
+.dynamic-heartbeat-badge {
+  position: relative;
+}
+
+.dynamic-heartbeat-badge::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 1.5px solid rgba(239, 68, 68, 0.5);
+  animation: badgePulseHalo 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  pointer-events: none;
+}

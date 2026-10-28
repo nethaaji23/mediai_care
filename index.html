@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediAI Care+ | Enterprise Clinical AI &amp; Decision Intelligence Suite</title>
+  
+  <!-- SEO & Enterprise Meta Tags -->
+  <meta name="description" content="Enterprise-grade clinical decision intelligence platform powered by audited machine learning consensus (XGBoost, Random Forest, Logistic Regression), real-time ICU telemetry, drug interaction safety, and Groq LPU consultation." />
+  <meta name="keywords" content="clinical AI, healthcare intelligence, ICU telemetry, MIMIC-IV, CDC NHANES, FDA FAERS, medical diagnosis, symptom analysis, drug interactions, XGBoost, HIPAA compliant" />
+  <meta name="author" content="MediAI Care+ Healthcare Systems" />
+  <meta name="theme-color" content="#006591" />
+
+  <!-- Open Graph / Social Sharing Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MediAI Care+ | Enterprise Clinical AI &amp; Decision Intelligence Suite" />
+  <meta property="og:description" content="Audited machine learning consensus, ICU decompensation risk prediction, drug interaction checks, and zero-latency clinical AI decision support." />
+  <meta property="og:site_name" content="MediAI Care+" />
+
+  <!-- Medical Vector Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23006591'><path d='M16.5 3C19.5376 3 22 5.5 22 9C22 16 14.5 20 12 21.5C9.5 20 2 16 2 9C2 5.5 4.5 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3ZM12.9 15.5L16.2 10.5H13.7L12.5 13.5L10.5 8.5L8.5 13.5H6.5V15H9.5L10.7 12L12.1 15.5H12.9Z'/></svg>" />
+  
+  <!-- Tailwind CSS CDN with Forms & Container Queries -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Google Fonts: Inter & Geist -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-highest": "#e0e3e5",
+            "on-tertiary": "#ffffff",
+            "surface": "#f7f9fb",
+            "surface-bright": "#f7f9fb",
+            "secondary-fixed-dim": "#89ceff",
+            "on-secondary-fixed-variant": "#004c6e",
+            "inverse-surface": "#2d3133",
+            "on-tertiary-fixed-variant": "#005236",
+            "tertiary-container": "#002113",
+            "on-primary-container": "#7c839b",
+            "outline": "#76777d",
+            "on-error": "#ffffff",
+            "surface-container-low": "#f2f4f6",
+            "on-surface-variant": "#45464d",
+            "on-secondary-fixed": "#001e2f",
+            "on-error-container": "#93000a",
+            "secondary-container": "#39b8fd",
+            "on-primary-fixed": "#131b2e",
+            "tertiary": "#009668",
+            "background": "#f7f9fb",
+            "tertiary-fixed": "#6ffbbe",
+            "on-background": "#191c1e",
+            "surface-container": "#eceef0",
+            "inverse-primary": "#bec6e0",
+            "on-surface": "#191c1e",
+            "secondary": "#006591",
+            "outline-variant": "#c6c6cd",
+            "on-tertiary-container": "#009668",
+            "on-primary-fixed-variant": "#3f465c",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#004666",
+            "secondary-fixed": "#c9e6ff",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#eff1f3",
+            "surface-tint": "#565e74",
+            "primary-container": "#131b2e",
+            "surface-variant": "#e0e3e5",
+            "surface-container-high": "#e6e8ea",
+            "on-tertiary-fixed": "#002113",
+            "primary-fixed": "#dae2fd",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "primary-fixed-dim": "#bec6e0",
+            "primary": "#0f172a",
+            "tertiary-fixed-dim": "#4edea3",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#d8dadc"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "margin-mobile": "16px",
+            "md": "24px",
+            "xs": "4px",
+            "lg": "40px",
+            "gutter": "24px",
+            "sm": "12px",
+            "xl": "64px",
+            "base": "8px",
+            "margin-desktop": "48px"
+          },
+          fontFamily: {
+            "body-lg": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "mono-data": ["Geist", "monospace"],
+            "body-md": ["Inter", "sans-serif"],
+            "label-md": ["Geist", "sans-serif"],
+            "headline-xl": ["Inter", "sans-serif"],
+            "headline-lg": ["Inter", "sans-serif"],
+            "headline-md": ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body class="bg-background text-on-background antialiased font-body-md min-h-screen flex flex-col">
+  <div id="app" class="min-h-screen flex flex-col"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

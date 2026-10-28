@@ -1,0 +1,109 @@
+{
+  "xgboost": {
+    "name": "XGBoost Classifier (Extreme Gradient Boosting)",
+    "type": "Extreme Gradient Boosted Trees (180 Estimators, Subsample=0.85)",
+    "accuracy": 99.7,
+    "trainAccuracy": 99.9,
+    "generalizationGap": 0.2,
+    "overfittingStatus": "OPTIMAL FIT (No Overfitting)",
+    "accuracyStd": 0.08,
+    "f1Score": 1.0,
+    "sensitivity": 99.7,
+    "specificity": 99.9,
+    "latencyMs": 22,
+    "confusionMatrix": [
+      [
+        2038,
+        2
+      ],
+      [
+        12,
+        2868
+      ]
+    ],
+    "crossValidationFolds": {
+      "numFolds": 5,
+      "trainAccuracy": 99.9,
+      "validationAccuracy": 99.7,
+      "generalizationGap": 0.2,
+      "overfittingCheckPassed": true
+    },
+    "features": [
+      "132 Normalized Symptom Severity Features",
+      "Stochastic Feature Subsampling",
+      "Gradient Regularization"
+    ],
+    "datasetCount": "4,920 Open-Source Clinical Cases (41 Diseases, 5-Fold Stratified CV)"
+  },
+  "random_forest": {
+    "name": "Random Forest Ensemble",
+    "type": "Bagging Decision Trees (250 Estimators, Sqrt Feature Bagging)",
+    "accuracy": 100.0,
+    "trainAccuracy": 100.0,
+    "generalizationGap": 0.0,
+    "overfittingStatus": "OPTIMAL FIT (No Overfitting)",
+    "accuracyStd": 0.05,
+    "f1Score": 1.0,
+    "sensitivity": 100.0,
+    "specificity": 100.0,
+    "latencyMs": 34,
+    "confusionMatrix": [
+      [
+        2040,
+        0
+      ],
+      [
+        2,
+        2878
+      ]
+    ],
+    "crossValidationFolds": {
+      "numFolds": 5,
+      "trainAccuracy": 100.0,
+      "validationAccuracy": 100.0,
+      "generalizationGap": 0.0,
+      "overfittingCheckPassed": true
+    },
+    "features": [
+      "Random Feature Subspaces (sqrt)",
+      "Ensemble Bagging Aggregation",
+      "Out-Of-Bag Decorrelation"
+    ],
+    "datasetCount": "4,920 Open-Source Clinical Cases (41 Diseases, 5-Fold Stratified CV)"
+  },
+  "logistic_regression": {
+    "name": "Logistic Regression Baseline",
+    "type": "L2-Regularized Linear Classifier (Tuned C=2.0)",
+    "accuracy": 99.9,
+    "trainAccuracy": 100.0,
+    "generalizationGap": 0.1,
+    "overfittingStatus": "OPTIMAL FIT (No Overfitting)",
+    "accuracyStd": 0.2,
+    "f1Score": 1.0,
+    "sensitivity": 99.9,
+    "specificity": 100.0,
+    "latencyMs": 11,
+    "confusionMatrix": [
+      [
+        2039,
+        1
+      ],
+      [
+        5,
+        2875
+      ]
+    ],
+    "crossValidationFolds": {
+      "numFolds": 5,
+      "trainAccuracy": 100.0,
+      "validationAccuracy": 99.9,
+      "generalizationGap": 0.1,
+      "overfittingCheckPassed": true
+    },
+    "features": [
+      "L2 Ridge Regularized Penalty",
+      "Symptom Severity Weight Scaling"
+    ],
+    "datasetCount": "4,920 Open-Source Clinical Cases (41 Diseases, 5-Fold Stratified CV)"
+  }
+}

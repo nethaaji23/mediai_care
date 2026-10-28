@@ -1,0 +1,54 @@
+# Node.js Dependencies & Build Output
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Python Cache & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+parts/
+var/
+sdist/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+
+# IDE & Editor Configs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs & Temporary Files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Scratch HTML Dumps & Redundant Large Duplicates
+stitch-*.html
+server/clinical_dataset_full.csv
+*.docx

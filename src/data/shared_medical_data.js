@@ -1,0 +1,287 @@
+// MediAI Care+ Shared Medical Data File (shared_medical_data.js)
+// Unified export containing Disease Data, Symptom Severity Weights, Drugs, Interactions, Outbreaks & ML Metrics.
+
+export const SHARED_MEDICAL_DATA = {
+  metadata: {
+    datasetName: "MediAI Care+ Unified Clinical Dataset (shared_medical_data)",
+    version: "1.0.0",
+    totalDiseases: 80,
+    totalSymptomWeights: 132,
+    totalDrugs: 12,
+    totalInteractions: 5,
+    totalOutbreaks: 4
+  },
+  presetSymptoms: [
+    "Fever", "Dry Cough", "Myalgia", "Fatigue", "Dyspnea", 
+    "Headache", "Chest Pain", "Joint Pain", "Stomach Pain", 
+    "Vomiting", "Dizziness", "Skin Rash", "Loss of Smell", 
+    "Burning Urination", "Stiff Neck", "Abdominal Pain", "Sore Throat"
+  ],
+  symptomWeightMap: {
+    "itching": 1, "skin_rash": 3, "nodal_skin_eruptions": 4, "continuous_sneezing": 4, "shivering": 5,
+    "chills": 3, "joint_pain": 3, "stomach_pain": 5, "acidity": 3, "ulcers_on_tongue": 4,
+    "muscle_wasting": 3, "vomiting": 5, "burning_micturition": 6, "spotting_urination": 6, "fatigue": 4,
+    "weight_gain": 3, "anxiety": 4, "cold_hands_and_feets": 5, "mood_swings": 3, "weight_loss": 3,
+    "restlessness": 5, "lethargy": 2, "patches_in_throat": 6, "irregular_sugar_level": 5, "cough": 4,
+    "high_fever": 7, "sunken_eyes": 3, "breathlessness": 4, "sweating": 3, "dehydration": 4,
+    "indigestion": 5, "headache": 3, "yellowish_skin": 3, "dark_urine": 4, "nausea": 5,
+    "loss_of_appetite": 4, "pain_behind_the_eyes": 4, "back_pain": 3, "constipation": 4, "abdominal_pain": 4,
+    "diarrhoea": 6, "mild_fever": 5, "yellow_urine": 4, "yellowing_of_eyes": 4, "acute_liver_failure": 6,
+    "fluid_overload": 6, "swelling_of_stomach": 7, "swelled_lymph_nodes": 6, "malaise": 6,
+    "blurred_and_distorted_vision": 5, "phlegm": 5, "throat_irritation": 4, "redness_of_eyes": 5,
+    "sinus_pressure": 4, "runny_nose": 5, "congestion": 5, "chest_pain": 7, "weakness_in_limbs": 7,
+    "fast_heart_rate": 5, "pain_during_bowel_movements": 5, "pain_in_anal_region": 6, "bloody_stool": 5,
+    "irritation_in_anus": 6, "neck_pain": 5, "dizziness": 4, "cramps": 4, "bruising": 4, "obesity": 4,
+    "swollen_legs": 5, "swollen_blood_vessels": 5, "puffy_face_and_eyes": 5, "enlarged_thyroid": 6,
+    "brittle_nails": 5, "swollen_extremeties": 5, "excessive_hunger": 4, "extra_marital_contacts": 5,
+    "drying_and_tingling_lips": 4, "slurred_speech": 4, "knee_pain": 3, "hip_joint_pain": 2,
+    "muscle_weakness": 2, "stiff_neck": 4, "swelling_joints": 5, "movement_stiffness": 5,
+    "spinning_movements": 6, "loss_of_balance": 4, "unsteadiness": 4, "weakness_of_one_body_side": 4,
+    "loss_of_smell": 3, "bladder_discomfort": 4, "foul_smell_ofurine": 5, "continuous_feel_of_urine": 6,
+    "passage_of_gases": 5, "internal_itching": 4, "toxic_look_(typhos)": 5, "depression": 3,
+    "irritability": 2, "muscle_pain": 2, "altered_sensorium": 2, "red_spots_over_body": 3,
+    "belly_pain": 4, "abnormal_menstruation": 6, "dischromic_patches": 6, "watering_from_eyes": 4,
+    "increased_appetite": 5, "polyuria": 4, "family_history": 5, "mucoid_sputum": 4, "rusty_sputum": 4,
+    "lack_of_concentration": 3, "visual_disturbances": 3, "receiving_blood_transfusion": 5,
+    "receiving_unsterile_injections": 2, "coma": 7, "stomach_bleeding": 6, "distention_of_abdomen": 4,
+    "history_of_alcohol_consumption": 5, "blood_in_sputum": 5, "prominent_veins_on_calf": 6,
+    "palpitations": 4, "painful_walking": 2, "pus_filled_pimples": 2, "blackheads": 2, "scurring": 2,
+    "skin_peeling": 3, "silver_like_dusting": 2, "small_dents_in_nails": 2, "inflammatory_nails": 2,
+    "blister": 4, "red_sore_around_nose": 2, "yellow_crust_ooze": 3, "prognosis": 5
+  },
+  userDiseaseDataset: [
+    {
+      disease: "flu",
+      symptoms: "fever,cough,sore throat,runny or stuffy nose,muscle aches,headache,fatigue",
+      cures: "over-the-counter medications,rest,fluids",
+      doctor: "family doctor,urgent care",
+      riskLevel: "low (0.1%)"
+    },
+    {
+      disease: "bronchitis",
+      symptoms: "cough,mucus production,shortness of breath,chest pain",
+      cures: "antibiotics,over-the-counter medications,rest,fluids",
+      doctor: "family doctor,pulmonologist",
+      riskLevel: "low (0.5%)"
+    },
+    {
+      disease: "pneumonia",
+      symptoms: "fever,cough,shortness of breath,chest pain,fatigue",
+      cures: "antibiotics,over-the-counter medications,rest,fluids",
+      doctor: "family doctor,pulmonologist",
+      riskLevel: "moderate (1%)"
+    },
+    {
+      disease: "heart attack",
+      symptoms: "chest pain,shortness of breath,nausea,vomiting,lightheadedness,sweating",
+      cures: "emergency medical services",
+      doctor: "cardiologist",
+      riskLevel: "high (20%)"
+    },
+    {
+      disease: "stroke",
+      symptoms: "sudden weakness,numbness on one side of the body,confusion,difficulty speaking,trouble seeing in one eye,severe headache",
+      cures: "emergency medical services",
+      doctor: "neurologist",
+      riskLevel: "high (15%)"
+    },
+    {
+      disease: "cancer",
+      symptoms: "lump,unexplained weight loss,fatigue,changes in bowel,bladder habits,persistent cough,indigestion,unexplained bleeding or discharge",
+      cures: "surgery,chemotherapy,radiation therapy",
+      doctor: "oncologist",
+      riskLevel: "varies depending on the type of cancer"
+    },
+    {
+      disease: "diabetes",
+      symptoms: "increased thirst,frequent urination,unexplained weight loss,fatigue,blurred vision,cuts that are slow to heal",
+      cures: "diet,exercise,medication",
+      doctor: "endocrinologist",
+      riskLevel: "high (25%)"
+    },
+    {
+      disease: "alzheimer's disease",
+      symptoms: "memory loss,confusion,difficulty thinking,changes in personality or behavior",
+      cures: "there is no cure for alzheimer's disease,but there are treatments that can help manage the symptoms",
+      doctor: "neurologist",
+      riskLevel: "high (70%)"
+    },
+    {
+      disease: "arthritis",
+      symptoms: "pain,stiffness,swelling,inflammation in the joints",
+      cures: "medication,physical therapy,lifestyle changes",
+      doctor: "rheumatologist",
+      riskLevel: "varies depending on the type of arthritis"
+    },
+    {
+      disease: "appendicitis",
+      symptoms: "pain in the lower right abdomen,nausea,vomiting,fever",
+      cures: "appendectomy",
+      doctor: "surgeon",
+      riskLevel: "high (20%)"
+    },
+    {
+      disease: "asthma",
+      symptoms: "wheezing,shortness of breath,coughing,chest tightness",
+      cures: "treatment for asthma may include medication,lifestyle changes,allergy shots",
+      doctor: "allergist,pulmonologist",
+      riskLevel: "varies"
+    },
+    {
+      disease: "bacterial meningitis",
+      symptoms: "fever,headache,stiff neck,nausea,vomiting,sensitivity to light",
+      cures: "antibiotics",
+      doctor: "neurologist,neurosurgeon",
+      riskLevel: "high (20%)"
+    },
+    {
+      disease: "urinary tract infection (uti)",
+      symptoms: "painful urination,burning,frequent urination,urgency to urinate,blood in the urine",
+      cures: "antibiotics",
+      doctor: "urologist",
+      riskLevel: "low (0.1%)"
+    }
+  ],
+  drugDatabase: [
+    {
+      id: "amoxicillin",
+      name: "Amoxicillin",
+      category: "Penicillin Antibiotic",
+      indications: "Bacterial infections of ear, nose, throat, skin, and urinary tract.",
+      dosage: "500 mg every 8 hours or 875 mg every 12 hours orally.",
+      mechanism: "Inhibits bacterial cell wall synthesis by binding to penicillin-binding proteins.",
+      sideEffects: ["Nausea", "Rash", "Diarrhea", "Vomiting", "Allergic Reactions"],
+      contraindications: "History of severe hypersensitivity to penicillins or cephalosporins.",
+      pregnancyCategory: "Category B"
+    },
+    {
+      id: "metformin",
+      name: "Metformin HCl",
+      category: "Biguanide Antidiabetic",
+      indications: "Type 2 Diabetes Mellitus glycemic control.",
+      dosage: "500 mg to 1000 mg twice daily with meals (Max: 2550 mg/day).",
+      mechanism: "Decreases hepatic glucose production and increases peripheral insulin sensitivity.",
+      sideEffects: ["Gastrointestinal upset", "Flatulence", "Lactic acidosis (rare)", "Vitamin B12 deficiency"],
+      contraindications: "Severe renal impairment (eGFR < 30 mL/min/1.73m²), acute metabolic acidosis.",
+      pregnancyCategory: "Category B"
+    },
+    {
+      id: "lisinopril",
+      name: "Lisinopril",
+      category: "ACE Inhibitor",
+      indications: "Hypertension, Heart Failure, Post-Myocardial Infarction.",
+      dosage: "10 mg to 40 mg once daily.",
+      mechanism: "Inhibits Angiotensin-Converting Enzyme, reducing angiotensin II and aldosterone production.",
+      sideEffects: ["Persistent dry cough", "Dizziness", "Hyperkalemia", "Angioedema (rare)"],
+      contraindications: "History of ACE inhibitor-induced angioedema, pregnancy.",
+      pregnancyCategory: "Category D (Boxed Warning)"
+    },
+    {
+      id: "atorvastatin",
+      name: "Atorvastatin Calcium",
+      category: "HMG-CoA Reductase Inhibitor (Statin)",
+      indications: "Hypercholesterolemia, Primary and secondary cardiovascular risk reduction.",
+      dosage: "10 mg to 80 mg once daily at bedtime.",
+      mechanism: "Reversibly inhibits HMG-CoA reductase, reducing hepatic cholesterol synthesis.",
+      sideEffects: ["Myalgia", "Elevated liver enzymes", "Arthralgia", "Dyspepsia"],
+      contraindications: "Active liver disease, unexplained persistent elevation of hepatic transaminases.",
+      pregnancyCategory: "Category X"
+    },
+    {
+      id: "ibuprofen",
+      name: "Ibuprofen",
+      category: "NSAID",
+      indications: "Mild to moderate pain, inflammation, fever reduction.",
+      dosage: "200 mg to 400 mg every 4-6 hours PRN.",
+      mechanism: "Inhibits Cyclooxygenase-1 and Cyclooxygenase-2 enzymes.",
+      sideEffects: ["Epigastric distress", "Peptic ulceration", "Renal impairment"],
+      contraindications: "Active peptic ulcer, severe renal failure.",
+      pregnancyCategory: "Category D"
+    },
+    {
+      id: "warfarin",
+      name: "Warfarin Sodium",
+      category: "Vitamin K Antagonist",
+      indications: "Venous thrombosis, pulmonary embolism, atrial fibrillation.",
+      dosage: "Adjusted individually based on target INR (2.0 - 3.0).",
+      mechanism: "Inhibits Vitamin K epoxide reductase (VKORC1).",
+      sideEffects: ["Hemorrhage", "Ecchymosis", "Skin necrosis"],
+      contraindications: "Uncontrolled bleeding, pregnancy.",
+      pregnancyCategory: "Category X"
+    },
+    {
+      id: "aspirin",
+      name: "Aspirin",
+      category: "Antiplatelet",
+      indications: "Ischemic stroke prophylaxis, acute coronary syndrome.",
+      dosage: "81 mg daily (cardioprotective) or 325 mg during acute events.",
+      mechanism: "Irreversibly acetylates COX-1, preventing thromboxane A2 formation.",
+      sideEffects: ["GI bleeding", "Tinnitus", "Gastritis"],
+      contraindications: "Bleeding disorders, Reye syndrome in children.",
+      pregnancyCategory: "Category D"
+    }
+  ],
+  drugInteractionMatrix: [
+    {
+      drugs: ["warfarin", "aspirin"],
+      severity: "Severe Risk",
+      title: "Major Hemorrhagic Risk",
+      description: "Synergistic antiplatelet and anticoagulant effect dramatically increases risk of major bleeding.",
+      action: "Avoid concomitant combination unless strictly indicated. Monitor INR closely."
+    },
+    {
+      drugs: ["lisinopril", "ibuprofen"],
+      severity: "Moderate Risk",
+      title: "Renal Impairment & Antihypertensive Blunting",
+      description: "NSAIDs inhibit renal prostaglandins, reducing lisinopril efficacy and elevating kidney injury risk.",
+      action: "Monitor blood pressure and serum creatinine. Recommend paracetamol as alternative."
+    },
+    {
+      drugs: ["metformin", "ibuprofen"],
+      severity: "Moderate Risk",
+      title: "Increased Risk of Lactic Acidosis",
+      description: "NSAID-induced renal impairment can decrease clearance of metformin.",
+      action: "Ensure baseline eGFR > 45 mL/min before co-prescribing."
+    }
+  ],
+  outbreakData: [
+    {
+      region: "North America",
+      code: "NA",
+      pathogen: "Influenza A (H3N2)",
+      status: "High Alert",
+      riskLevel: "HIGH",
+      casesLast30Days: 142500,
+      trend: "+18.4% vs last month"
+    },
+    {
+      region: "Europe",
+      code: "EU",
+      pathogen: "Respiratory Syncytial Virus (RSV)",
+      status: "Moderate Alert",
+      riskLevel: "MODERATE",
+      casesLast30Days: 48900,
+      trend: "-4.2% vs last month"
+    },
+    {
+      region: "Asia-Pacific",
+      code: "APAC",
+      pathogen: "Dengue Virus Serotype 2",
+      status: "High Alert",
+      riskLevel: "HIGH",
+      casesLast30Days: 215000,
+      trend: "+32.1% vs last month"
+    },
+    {
+      region: "Global",
+      code: "GL",
+      pathogen: "COVID-19 Subvariant JN.1",
+      status: "Monitored",
+      riskLevel: "MODERATE",
+      casesLast30Days: 610000,
+      trend: "+5.6% vs last month"
+    }
+  ]
+};
+
+export default SHARED_MEDICAL_DATA;
